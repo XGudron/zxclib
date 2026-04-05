@@ -1,0 +1,7 @@
+[
+{
+    "key": "F5",
+    "command": "workbench.action.tasks.runTask",
+    "args": "48k example"
+}
+]

@@ -1,0 +1,11 @@
+#include "zx_evo_ers.h"
+
+void ZX_EVO_mount_open(uint8_t disk) {
+	disk; // A reg
+
+	__asm
+	RST 8
+	.db 0x53
+	.db 0x00
+	__endasm;
+}

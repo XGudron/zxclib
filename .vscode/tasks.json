@@ -1,0 +1,149 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "48k example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/48k/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/48k"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true          // терминал закроется после успешного выполнения
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "GFX example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/gfx/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/gfx"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "128k example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/128k/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/128k"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "128k-banked example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/128k_banked_calls/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/128k_banked_calls"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "trdos example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/trdos/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/trdos"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "evo-ers example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/evo_ers/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/evo_ers"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "evo-baseconf example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/evo_baseconf/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/evo_baseconf"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "evo-neogs example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/evo_neogs/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/evo_neogs"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "library build",
+            "type": "shell",
+            "command": "${workspaceFolder}/libsrc/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/libsrc"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true 
+            },
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+*.bin
+*.tap
+*.idx
+/examples/*/build
+/*/build
+.vscode/launch.json
+.vscode/c_cpp_properties.json
+.clang-format
+clang-format.bat
+*.trd
+*.com
+*.scl
+*.$B

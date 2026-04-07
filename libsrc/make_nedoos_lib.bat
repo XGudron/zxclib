@@ -1,0 +1,44 @@
+SET Z80_FLAGS=--allow-undocumented-instructions --no-std-crt0
+@REM Can use --max-allocs-per-node 2000000 for max optimization (slooowly)
+SET OPTIMIZATION_FLAGS=--opt-code-speed --peep-return
+SET CODE_FLAGS=-mz80
+SET GENERAL_FLAGS=--std c23 --Werror -I../include/
+SET LINKER_FLAGS=--code-loc 0 --data-loc 0
+SET BUILD_DIR=build
+SET EXECUTABLE_NAME=nedoos
+SET BUILD_OPTS=-c -o %BUILD_DIR%\
+
+del %EXECUTABLE_NAME%.lib
+
+mkdir %BUILD_DIR%
+
+@echo off
+
+for /R %%f in (nedoos\*.asm) do (
+    echo Processing file: %%f
+
+    sdasz80 -o -g %BUILD_DIR%\%%~nf.rel %%f
+    if errorlevel 1 goto ERR
+
+    sdar -rc %EXECUTABLE_NAME%.lib %BUILD_DIR%\%%~nf.rel
+    if errorlevel 1 goto ERR
+)
+
+for /R %%f in (nedoos\*.c) do (
+    echo Processing file: %%f
+
+    sdcc %CODE_FLAGS% %GENERAL_FLAGS% %Z80_FLAGS% %OPTIMIZATION_FLAGS% %LINKER_FLAGS% %%f %BUILD_OPTS%
+    if errorlevel 1 goto ERR
+
+    sdar -rc %EXECUTABLE_NAME%.lib %BUILD_DIR%\%%~nf.rel
+    if errorlevel 1 goto ERR
+)
+
+@echo on
+
+GOTO END
+
+:ERR
+PAUSE
+
+:END

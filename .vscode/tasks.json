@@ -130,9 +130,41 @@
             "problemMatcher": []
         },
         {
+            "label": "nedoos example",
+            "type": "shell",
+            "command": "${workspaceFolder}/examples/nedoos/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/nedoos"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "library build",
             "type": "shell",
             "command": "${workspaceFolder}/libsrc/make.bat",
+            "options": {
+                "cwd": "${workspaceFolder}/libsrc"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "close": true 
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "nedoos library build",
+            "type": "shell",
+            "command": "${workspaceFolder}/libsrc/make_nedoos_lib.bat",
             "options": {
                 "cwd": "${workspaceFolder}/libsrc"
             },

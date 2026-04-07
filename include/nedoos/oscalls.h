@@ -26,23 +26,23 @@
 #define MOUSE_BUTTON_BIT_RMB 0x02
 
 union APP_PAGES {
-	unsigned long l;
+	uint32_t l;
 	struct {
-		unsigned char window_3;
-		unsigned char window_2;
-		unsigned char window_1;
-		unsigned char window_0;
-		unsigned char pId;
-		unsigned char error;
-		unsigned char f;
+		uint8_t window_3;
+		uint8_t window_2;
+		uint8_t window_1;
+		uint8_t window_0;
+		uint8_t pId;
+		uint8_t error;
+		uint8_t f;
 	} pgs;
 };
 
 struct diskOp {
-	unsigned char drive;
+	uint8_t drive;
 	void *BufAdr;
-	unsigned long sector;
-	unsigned char count;
+	uint32_t sector;
+	uint8_t count;
 };
 
 void os_initstdio(void);
@@ -62,17 +62,17 @@ void bdosputs(char *str);
 char bdosgetkey(void);
 
 void exit(int16_t e);
-unsigned int _low_level_get(void);
-unsigned char scrredraw(void);
+uint16_t _low_level_get(void);
+uint8_t scrredraw(void);
 uint16_t os_reserv_1(void *);
 uint32_t time(void);
 
 extern uint8_t errno;
 extern uint8_t t1251to866[128];
-extern unsigned int mouse_yx;
-extern unsigned char mouse_x;
-extern unsigned char mouse_y;
-extern unsigned char mouse_btns;
+extern uint16_t mouse_yx;
+extern uint8_t mouse_x;
+extern uint8_t mouse_y;
+extern uint8_t mouse_btns;
 
 void conv1251to866(uint8_t *bufer);
 uint8_t OS_DELPAGE(uint8_t pageNumber);

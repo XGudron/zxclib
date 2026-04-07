@@ -41,6 +41,7 @@ zxclib/
 ### ZX Evolution
 - **ERS** - Evo Reset Service
 - **Baseconf** - Базовая конфигурация
+- **NedoOS** - Работа с системными вызовами ОС NedoOS
 
 ### Аппаратные расширения
 - **General Sound** - Звуковая карта
@@ -70,6 +71,7 @@ zxclib/
 - [`zx_netusb.h`](include/zx_netusb.h) - ZXNetUSB
 - [`zx_ay.h`](include/zx_ay.h) - AY звук
 - [`zx_gfx.h`](include/zx_gfx.h) - Графические функции
+- [`nedoos.h`](include/nedoos.h) - NedoOS
 
 ## 🚀 Быстрый старт
 
@@ -98,6 +100,7 @@ make.bat
 ### ZX Evolution
 - [`examples/evo_ers/`](examples/evo_ers/) - Примеры для ERS
 - [`examples/evo_baseconf/`](examples/evo_baseconf/) - Примеры для Baseconf
+- [`examples/nedoos/`](examples/nedoos/) - Примеры для NedoOS
 
 ### Мультимедиа
 - [`examples/evo_neogs/`](examples/evo_neogs/) - NeoGS примеры
@@ -132,6 +135,7 @@ make.bat
 - [SDCC-NOINIT Documentation](https://github.com/salextpuru/sdcc-noinit/blob/master/doc/sdcc-noinit.pdf)
 - [Z88DK Wiki](https://github.com/z88dk/z88dk/wiki)
 - [NedoPC SVN](http://svn.nedopc.com/?)
+- [NedoOS SVN](http://nedoos.ru/svn/)
 
 ### Инструменты
 - [UnrealSpeccy](http://nedoos.ru/index.php/materialy/stati/14-all/programmistam/24-dokumentatsiya-unrealspeccy) - Эмулятор Evo

@@ -17,6 +17,7 @@
 #include "nedoos/graphic.h"
 #include "nedoos/oscalls.h"
 #include "nedoos/osfs.h"
+#include "nedoos/sleepint.h"
 #include "nedoos/tcp.h"
 #include "nedoos/tty.h"
 #include "nedoos/uartdelay.h"

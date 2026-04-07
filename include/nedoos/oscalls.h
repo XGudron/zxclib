@@ -7,11 +7,16 @@ void os_initstdio(void);
 
 void OS_CLS(uint8_t color);
 unsigned int OS_GETXY(void);
+uint8_t OS_GETATTR(void);
 void OS_PRATTR(uint8_t attribute);
 void OS_SCROLLUP(uint16_t xy, uint16_t wh);
 uint8_t OS_SETGFX(uint8_t mode); // ;e=0:EGA, e=2:MC, e=3:6912, e=6:text ;+8 for noturbo ;+0x80 for auto screen pages keeping ;+SET FOCUS ;e=-1: disable gfx (out: e=old gfxmode)
 void OS_SETXY(uint8_t x, uint8_t y);
 void OS_SETXYW(uint16_t w);
+
+void bdosputchar(char chr);
+void bdosprint(char *str);
+void bdosputs(char *str);
 
 ////////////////////
 
@@ -21,8 +26,6 @@ unsigned char OS_GETPAGEOWNER(unsigned char id);
 void YIELD(void);
 void OS_SETCOLOR(unsigned char color);
 void OS_SETMUSIC(void (*play)(void), unsigned char pg);
-void print(unsigned char *);
-unsigned char OS_GETATTR(void);
 long time(void); // Alone Coder
 
 // Kulich Area
@@ -62,13 +65,6 @@ void OS_SETSCREEN(unsigned char screen);
 // End of Kulich area
 
 void SETPG32KHIGH(unsigned char page);
-
-//unsigned int putf(const char *str);
-void putcsi(unsigned char);
-void printn(unsigned char *, unsigned int size);
-#define PUTCSI(_a) putcsi(_a)
-void putcsi2(unsigned int);
-#define PUTCSI2(_a, _b) putcsi(_a | (_b << 8))
 
 union APP_PAGES {
 	unsigned long l;

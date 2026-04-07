@@ -28,8 +28,8 @@ void main(void) {
 		putchar(chr);
 	}*/
 
-	memset(tmp_str, 0x00, sizeof(tmp_str));
-	puts(gets(tmp_str));
+	// puts(gets(tmp_str));
+	// printn("TEST PRINT", 3);
 
 	puts("Demo end !\r\n");
 	while(1) {}

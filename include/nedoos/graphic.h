@@ -1,16 +1,13 @@
 #ifndef NEDOOS_GRAPHIC_H
 #define NEDOOS_GRAPHIC_H
 
-unsigned char viewScreen6912(unsigned int bufAdr, unsigned int ints);
-// DE = buffer adress BC = time  out: A = key
-
-// unsigned char viewScreen6912NoKeyGraph(unsigned int bufAdr, unsigned char ints, unsigned char border);
-unsigned char viewScreen6912NoKeyGraph(unsigned long bufIntBrd);
-unsigned char rst0x08(void);
-// out a=key
+#include <stdint.h>
 
 void CLEARC000(void);
 void CLEARC000FAST(void);
 void OS_HALT(void);
+uint8_t rst0x08(void);
+uint8_t viewScreen6912(uint16_t bufAdr, uint16_t ints_time);
+uint16_t viewScreen6912NoKeyGraph(uint32_t bufIntBrd);
 
 #endif

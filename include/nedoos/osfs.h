@@ -1,10 +1,9 @@
 #ifndef NEDOOS_OSFS_H
 #define NEDOOS_OSFS_H
 
-extern unsigned char errno;
-// extern unsigned char syspath[8];
+#include <stdint.h>
 
-typedef unsigned int FILE;
+typedef uint16_t FILE;
 
 #ifndef FILINFO_TYPE
 typedef struct {
@@ -17,22 +16,29 @@ typedef struct {
 } FILINFO;
 #endif
 
-FILE *OS_CREATEHANDLE(unsigned char *path, unsigned char flags);
-unsigned int OS_WRITEHANDLE(unsigned char *buffer, FILE *hnd, unsigned int count);
-unsigned int OS_READHANDLE(unsigned char *buffer, FILE *hnd, unsigned int count);
-FILE *OS_OPENHANDLE(unsigned char *path, unsigned char flags);
-unsigned int OS_CLOSEHANDLE(FILE *hnd);
-unsigned long OS_GETFILESIZE(FILE *hnd);
-void OS_SEEKHANDLE(FILE *hnd, unsigned long ofset);
-unsigned char OS_GETFILINFO(unsigned char *path, FILINFO *);
-// unsigned char * OS_GETPATH(unsigned char * path);
-unsigned char OS_OPENDIR(unsigned char *path);
-unsigned char OS_READDIR(FILINFO *);
-// unsigned char	OS_CHDIR(const unsigned char * path);
-// unsigned char	OS_CHDRV(unsigned char drive);
-unsigned char OS_MKDIR(unsigned char *path);
-// unsigned char	OS_DELETE(unsigned char * path);
-// void			OS_SETSYSDRV(void);
-unsigned char *fs_get_err_str(void);
+extern uint8_t errno;
+// extern uint8_t syspath[8];
+
+uint8_t *fs_get_err_str(void);
+
+FILE *OS_CREATEHANDLE(uint8_t *path, uint8_t flags);
+
+uint8_t OS_READDIR(FILINFO *fileinfo);
+uint8_t OS_OPENDIR(uint8_t *path);
+uint8_t OS_DELETE(uint8_t * path);
+uint8_t OS_MKDIR(uint8_t *path);
+uint8_t OS_CHDIR(const uint8_t *path);
+uint8_t OS_CHDRV(uint8_t drive);
+
+uint8_t OS_GETFILINFO(uint8_t *path, FILINFO *fileinfo);
+void OS_SEEKHANDLE(FILE *hnd, uint32_t offset);
+FILE *OS_OPENHANDLE(uint8_t *path, uint8_t flags);
+uint16_t OS_CLOSEHANDLE(FILE *hnd);
+
+uint8_t OS_SETSYSDRV(void);
+uint32_t OS_GETFILESIZE(FILE *hnd);
+uint8_t *OS_GETPATH(uint8_t *path);
+uint16_t OS_READHANDLE(uint8_t *buffer, FILE *hnd, uint16_t count);
+uint16_t OS_WRITEHANDLE(uint8_t *buffer, FILE *hnd, uint16_t count);
 
 #endif
